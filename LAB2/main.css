@@ -1,0 +1,105 @@
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Pacifico", cursive;
+  font-family: "Roboto Mono", monospace;
+}
+
+body {
+  background-color: #1b263b;
+  color: #e0e1dd;
+  text-align: center;
+}
+
+h1 {
+  margin: 5rem;
+  text-align: center;
+  color: #f3b858;
+  font-family: "Pacifico", cursive;
+  font-size: 4rem;
+}
+
+h2 {
+  display: inline;
+  color: #e0bf9d;
+}
+
+a {
+  text-decoration: none;
+  color: #0d1b2a;
+}
+
+hr {
+  margin: 2rem auto;
+}
+
+.page a {
+  margin: 3px;
+  padding: 10px;
+  color: #778da9;
+  transition: all 0.3s;
+}
+.page a:hover {
+  color: #fca311;
+}
+
+#signup {
+  padding: 0.5em;
+  border: 1px solid #fca311;
+  transition: all 0.5s;
+}
+
+#signup:hover {
+  border: 5px double #fca311;
+  font-size: 1.2rem;
+}
+
+#login {
+  padding: 0.5em;
+  border: 1px solid #fca311;
+  transition: all 0.5s;
+}
+
+#login:hover {
+  border: 5px double #fca311;
+  font-size: 1.2rem;
+}
+
+section .info {
+  margin: 1rem;
+}
+
+section .login_info {
+  margin: 1rem;
+}
+
+.signup_button a {
+  text-decoration: none;
+}
+
+button {
+  display: block;
+  width: 200px;
+  height: 40px;
+  border: 3px #f7ede2 solid;
+  margin: 15px auto;
+  background-color: #66aaff;
+  text-align: center;
+  cursor: pointer;
+
+  color: #333;
+  transition: all 0.5s;
+}
+
+button:hover {
+  background-color: #219ebc;
+  color: #fff;
+}
+
+div > strong {
+  font-size: 1.2rem;
+  color: #778da9;
+}
+
+.info .chkbox {
+  padding: 1rem;
+}

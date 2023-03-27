@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Pacifico&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sign Up Page</title>
+  </head>
+  <body>
+    <h1>Welcome to my Shop!</h1>
+    <div class="page">
+      <a href="login.html">Log In Page</a>
+      <a href="signup.html" id="signup">Sign Up Page</a>
+    </div>
+    <hr />
+    <section>
+      <h2>회원정보 입력</h2>
+      <form action="https://www.example.com" method="GET">
+        <div class="info">
+          <label for="name">
+            Name :
+            <input
+              type="text"
+              id="name"
+              placeholder="이름을 입력하시오."
+              required
+              autocomplete="on"
+            />
+          </label>
+        </div>
+        <div class="info">
+          <label for="id">
+            ID :
+            <input
+              type="text"
+              id="id"
+              placeholder="ID를 입력하시오"
+              required
+              autofocus
+            />
+          </label>
+        </div>
+        <div class="info">
+          <label for="password">
+            Password :
+            <input
+              type="password"
+              id="password"
+              placeholder="비밀번호 입력"
+              required
+            />
+          </label>
+        </div>
+        <div class="info">
+          Birthday :
+          <label for="birth">
+            <input type="date" id="birth" />
+          </label>
+        </div>
+        <div class="info">
+          Age :
+          <label for="age">
+            <input type="number" id="age" placeholder="Your age" step="1" />
+          </label>
+        </div>
+        <div class="info">
+          <label for="email">
+            Email :
+            <input
+              type="email"
+              id="email"
+              placeholder="username@domain.com"
+              autocomplete="on"
+            />
+          </label>
+        </div>
+        <div class="info">
+          <input type="radio" name="gender" id="man" />
+          <label for="man"> Man </label>
+          <input type="radio" name="gender" id="woman" checked />
+          <label for="woman"> Woman </label>
+        </div>
+        <div class="info">
+          <label for="phonenumber">
+            Phone number :
+            <input
+              type="tel"
+              id="phonenumber"
+              name="phone_number"
+              placeholder="(000)-0000-0000"
+              pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
+              required
+            />
+          </label>
+        </div>
+        <div class="info">
+          <strong>[Choose your job]</strong>
+          <div class="chkbox">
+            <input type="checkbox" id="student" />
+            <label for="student">Student</label>
+            <input type="checkbox" id="employee" />
+            <label for="employee">Employee</label>
+            <input type="checkbox" id="professor" />
+            <label for="professor">Professor</label>
+            <input type="checkbox" id="other" />
+            <label for="other">Others</label>
+          </div>
+        </div>
+        <div class="signup_button">
+          <button>Sign Up</button>
+          <button type="reset">Cancel</button>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
