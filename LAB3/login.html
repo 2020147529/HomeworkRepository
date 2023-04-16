@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Pacifico&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <title>Log In Page</title>
+  </head>
+  <body class="login">
+    <header>
+      <h1>Welcome to my Shop!</h1>
+    </header>
+    <nav class="page">
+      <a href="index.html" id="index">Main Page</a>
+      <a href="login.html" id="login">Log In Page</a>
+      <a href="signup.html" id="signup">Sign Up Page</a>
+    </nav>
+    <hr />
+    <div>
+      <h2>회원정보 입력</h2>
+      <div class="login_info">
+        <label for="id_input">
+          <input
+            type="text"
+            id="id_input"
+            placeholder="ID를 입력하시오."
+            autocomplete="on"
+            autofocus
+          />
+        </label>
+      </div>
+      <div class="login_info">
+        <label for="pw_input">
+          <input
+            type="password"
+            id="pw_input"
+            placeholder="비밀번호를 입력하시오"
+          />
+        </label>
+      </div>
+      <div>
+        <button>Log In</button>
+        <form action="signup.html">
+          <button id="login_signup">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
