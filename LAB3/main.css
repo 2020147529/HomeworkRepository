@@ -9,6 +9,7 @@ body {
   color: #e0e1dd;
   margin-left: auto;
   margin-right: auto;
+  width: 1020px;
 }
 /* h1 style */
 h1 {
@@ -243,6 +244,10 @@ div > strong {
     margin-right: auto;
   }
 
+  h2 {
+    font-size: 3rem;
+  }
+
   .index h1 {
     color: #212529;
     text-align: center;
@@ -279,6 +284,8 @@ div > strong {
     flex-direction: row;
     justify-content: space-around;
     width: 80%;
+    height: 800px;
+    margin: 20px;
   }
 
   .imgbox:hover .overlay {
@@ -367,6 +374,7 @@ div > strong {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin: 40px;
   }
 
   .Description p {
