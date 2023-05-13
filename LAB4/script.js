@@ -12,18 +12,21 @@ fetch("product.json")
 
 const CATEGORY = document.querySelector("#category");
 CATEGORY.addEventListener("change", () => {
+  window.removeEventListener("scroll", scroll);
   device = CATEGORY.options[CATEGORY.selectedIndex].value;
   console.log(device);
 });
 
 const SORTING = document.querySelector("#sort");
 SORTING.addEventListener("change", () => {
+  window.removeEventListener("scroll", scroll);
   sort = SORTING.options[SORTING.selectedIndex].value;
   console.log(sort);
 });
 
 const SEARCH = document.querySelector("#search");
 SEARCH.addEventListener("change", () => {
+  window.removeEventListener("scroll", scroll);
   searchText = SEARCH.value;
   console.log(searchText);
 });
@@ -56,14 +59,27 @@ SUBMIT_BUTTON.addEventListener("click", () => {
     } else if (sort == "descending") {
       sortDscendingOrder(filter);
     }
-    for (let i = 0; i < filter.length; i++) {
-      createImgBox(
-        filter[i].name,
-        filter[i].imgsrc,
-        filter[i].price,
-        filter[i].category
-      );
+    let totalNum = 0;
+    function load(loadNum = 4) {
+      for (let i = 0; i < loadNum; i++) {
+        createImgBox(
+          filter[totalNum].name,
+          filter[totalNum].imgsrc,
+          filter[totalNum].price,
+          filter[totalNum].category
+        );
+        totalNum++;
+      }
     }
+    load();
+    window.addEventListener("scroll", function scroll() {
+      if (
+        window.scrollY + window.innerHeight >=
+        document.documentElement.scrollHeight
+      ) {
+        load();
+      }
+    });
   }
 });
 
@@ -106,4 +122,3 @@ function createImgBox(title, imgsrc, price, alternative) {
 
   document.querySelector(".group").innerHTML += imgElement;
 }
-
