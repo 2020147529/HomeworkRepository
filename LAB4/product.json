@@ -8,13 +8,25 @@
   {
     "name": "MacBookPro 14-inch",
     "price": 1999,
-    "imgsrc": "img/MacPro.jpeg",
+    "imgsrc": "img/MacPro14.jpg",
     "category": "macbook"
   },
   {
     "name": "MacBookPro 16-inch",
     "price": 2499,
-    "imgsrc": "img/MacPro.jpeg",
+    "imgsrc": "img/MacPro16.jpeg",
+    "category": "macbook"
+  },
+  {
+    "name": "MacBookAir M1 13-inch",
+    "price": 899,
+    "imgsrc": "img/MacAir13.jpeg",
+    "category": "macbook"
+  },
+  {
+    "name": "MacBookAir M2 13.6-inch",
+    "price": 1199,
+    "imgsrc": "img/MacAir136.jpeg",
     "category": "macbook"
   },
   {
@@ -30,6 +42,24 @@
     "category": "ipad"
   },
   {
+    "name": "iPad Air",
+    "price": 599,
+    "imgsrc": "img/ipadAir.png",
+    "category": "ipad"
+  },
+  {
+    "name": "iPad 10th-Gen",
+    "price": 449,
+    "imgsrc": "img/iPad10th.png",
+    "category": "ipad"
+  },
+  {
+    "name": "iPad 9th-Gen",
+    "price": 329,
+    "imgsrc": "img/iPad9th.png",
+    "category": "ipad"
+  },
+  {
     "name": "iPhone 14 Pro",
     "price": 999,
     "imgsrc": "img/iPhone14Pro.jpg",
@@ -42,9 +72,21 @@
     "category": "iphone"
   },
   {
+    "name": "iPhone 14 Plus",
+    "price": 899,
+    "imgsrc": "img/iPhone14plus.png",
+    "category": "iphone"
+  },
+  {
     "name": "iPhone 13",
     "price": 599,
     "imgsrc": "img/iPhone13.jpg",
+    "category": "iphone"
+  },
+  {
+    "name": "iPhone 12",
+    "price": 599,
+    "imgsrc": "img/iPhone12.png",
     "category": "iphone"
   },
   {
@@ -52,6 +94,12 @@
     "price": 429,
     "imgsrc": "img/iPhoneSE.jpg",
     "category": "iphone"
+  },
+  {
+    "name": "Apple Watch Hermes",
+    "price": 1509,
+    "imgsrc": "img/watchHer.jpeg",
+    "category": "watch"
   },
   {
     "name": "Apple Watch Ultra",
