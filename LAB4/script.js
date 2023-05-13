@@ -59,6 +59,8 @@ SUBMIT_BUTTON.addEventListener("click", () => {
     } else if (sort == "descending") {
       sortDscendingOrder(filter);
     }
+    // onscroll function
+    // display 4 each element when user scroll and its height + window.inner height is bigger then document's height
     let totalNum = 0;
     function load(loadNum = 4) {
       for (let i = 0; i < loadNum; i++) {
@@ -71,6 +73,8 @@ SUBMIT_BUTTON.addEventListener("click", () => {
         totalNum++;
       }
     }
+    // first loading the image and display it
+    // we should display items at first without scroll event
     load();
     window.addEventListener("scroll", function scroll() {
       if (
