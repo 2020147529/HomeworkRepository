@@ -55,22 +55,28 @@ SUBMIT_BUTTON.addEventListener("click", () => {
     alert("NO SUCH ELEMENTS! PLEASE SEARCH AGAIN");
   } else {
     if (sort == "ascending") {
-      sortAscendingOrder(filter);
+      filter = filter.sort((a, b) => {
+        return a.price - b.price;
+      });
     } else if (sort == "descending") {
-      sortDscendingOrder(filter);
+      filter = filter.sort((a, b) => {
+        return b.price - a.price;
+      });
     }
     // onscroll function
     // display 4 each element when user scroll and its height + window.inner height is bigger then document's height
     let totalNum = 0;
     function load(loadNum = 4) {
       for (let i = 0; i < loadNum; i++) {
-        createImgBox(
-          filter[totalNum].name,
-          filter[totalNum].imgsrc,
-          filter[totalNum].price,
-          filter[totalNum].category
-        );
-        totalNum++;
+        if (totalNum < filter.length) {
+          createImgBox(
+            filter[totalNum].name,
+            filter[totalNum].imgsrc,
+            filter[totalNum].price,
+            filter[totalNum].category
+          );
+          totalNum++;
+        }
       }
     }
     // first loading the image and display it
@@ -87,32 +93,8 @@ SUBMIT_BUTTON.addEventListener("click", () => {
   }
 });
 
-function sortAscendingOrder(data) {
-  data.sort(function (a, b) {
-    if (a.pirce > b.price) {
-      return 1;
-    }
-    if (a.price < b.price) {
-      return -1;
-    }
-    return 0;
-  });
-}
-
-function sortDscendingOrder(data) {
-  data.sort(function (a, b) {
-    if (a.pirce < b.price) {
-      return 1;
-    }
-    if (a.price > b.price) {
-      return -1;
-    }
-    return 0;
-  });
-}
-
 function createImgBox(title, imgsrc, price, alternative) {
-  const imgElement = `<div class="imgbox" onclick='changeStyle()'>
+  const imgElement = `<div class="imgbox">
                         <img
                           class="Device"
                           src=${imgsrc}
