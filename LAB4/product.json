@@ -1,0 +1,74 @@
+[
+  {
+    "name": "MacBookPro 13-inch",
+    "price": 1499,
+    "imgsrc": "img/MacPro.jpeg",
+    "category": "macbook"
+  },
+  {
+    "name": "MacBookPro 14-inch",
+    "price": 1999,
+    "imgsrc": "img/MacPro.jpeg",
+    "category": "macbook"
+  },
+  {
+    "name": "MacBookPro 16-inch",
+    "price": 2499,
+    "imgsrc": "img/MacPro.jpeg",
+    "category": "macbook"
+  },
+  {
+    "name": "iPad Pro 11-inch",
+    "price": 799,
+    "imgsrc": "img/iPadPro.jpg",
+    "category": "ipad"
+  },
+  {
+    "name": "iPad Pro 12.9-inch",
+    "price": 1099,
+    "imgsrc": "img/iPadPro.jpg",
+    "category": "ipad"
+  },
+  {
+    "name": "iPhone 14 Pro",
+    "price": 999,
+    "imgsrc": "img/iPhone14Pro.jpg",
+    "category": "iphone"
+  },
+  {
+    "name": "iPhone 14",
+    "price": 799,
+    "imgsrc": "img/iPhone14.jpg",
+    "category": "iphone"
+  },
+  {
+    "name": "iPhone 13",
+    "price": 599,
+    "imgsrc": "img/iPhone13.jpg",
+    "category": "iphone"
+  },
+  {
+    "name": "iPhone SE",
+    "price": 429,
+    "imgsrc": "img/iPhoneSE.jpg",
+    "category": "iphone"
+  },
+  {
+    "name": "Apple Watch Ultra",
+    "price": 799,
+    "imgsrc": "img/watchUltra.jpeg",
+    "category": "watch"
+  },
+  {
+    "name": "Apple Watch 8",
+    "price": 399,
+    "imgsrc": "img/watch8.jpeg",
+    "category": "watch"
+  },
+  {
+    "name": "Apple Watch SE",
+    "price": 249,
+    "imgsrc": "img/watchSE.jpg",
+    "category": "watch"
+  }
+]

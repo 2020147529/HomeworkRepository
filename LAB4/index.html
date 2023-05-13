@@ -12,7 +12,6 @@
     />
     <link rel="stylesheet" type="text/css" href="main.css" />
     <title>Document</title>
-    <script src="script.js"></script>
   </head>
   <body class="index">
     <header>
@@ -28,10 +27,11 @@
         <div class="category">
           <p>Choose a category</p>
           <select name="category" id="category">
-            <option value="MacBook">MacBook</option>
-            <option value="iPhone">iPhone</option>
-            <option value="iPad">iPad</option>
-            <option value="Apple Watch">Watch</option>
+            <option value="all" selected>ALL</option>
+            <option value="macbook">MacBook</option>
+            <option value="iphone">iPhone</option>
+            <option value="ipad">iPad</option>
+            <option value="watch">Watch</option>
           </select>
         </div>
         <div class="search">
@@ -41,137 +41,48 @@
         <div class="sort">
           <p>Choose a sort</p>
           <select name="sort" id="sort">
-            <option value="none">none</option>
+            <option value="none" selected>--SELECT ORDER--</option>
             <option value="ascending">ascending</option>
             <option value="descending">descending</option>
           </select>
         </div>
-        <button id="submit">Submit</button>
+        <button id="find">Search</button>
       </div>
       <div class="Stuff">
         <div class="group">
-          <div class="block">
-            <div class="imgbox">
-              <img
-                class="Device"
-                id="MacPro"
-                src="img/MacPro.jpeg"
-                alt="MacBookPro"
-              />
-              <div class="overlay">
-                <div class="text">MacBook<br />Pro</div>
-              </div>
+          <!-- <div class="imgbox">
+            <img class="Device" src="img/MacPro.jpeg" alt="MacBookPro" />
+            <div class="overlay">
+              <div class="text">MacBook<br />Pro</div>
             </div>
-            <div class="imgbox">
-              <img
-                class="Device"
-                id="MacAir"
-                src="img/MacAir.jpg"
-                alt="MacBookAir"
-              />
-              <div class="overlay">
-                <div class="text">MacBook<br />Air</div>
-              </div>
-            </div>
-          </div>
-          <div class="block">
-            <div class="imgbox">
-              <img
-                class="Device"
-                id="iPhone14Pro"
-                src="img/iPhone14Pro.jpg"
-                alt="iPhone14pro"
-              />
-              <div class="overlay">
-                <div class="text">iPhone14<br />Pro</div>
-              </div>
-            </div>
-            <div class="imgbox">
-              <img
-                class="Device"
-                id="iPhone13Pro"
-                src="img/iPhone13Pro.jpg"
-                alt="iPhone13Pro"
-              />
-              <div class="overlay">
-                <div class="text">iPhone13<br />Pro</div>
-              </div>
-            </div>
-          </div>
-          <div class="block">
-            <div class="imgbox">
-              <img
-                class="Device"
-                id="iPadPro"
-                src="img/iPadPro.jpg"
-                alt="iPadPro"
-              />
-              <div class="overlay">
-                <div class="text">iPad<br />Pro</div>
-              </div>
-            </div>
-            <div class="imgbox">
-              <img
-                class="Device"
-                id="iPadMini"
-                src="img/iPadMini.jpg"
-                alt="iPadMini"
-              />
-              <div class="overlay">
-                <div class="text">iPad<br />Mini</div>
-              </div>
-            </div>
-          </div>
-          <div class="block">
-            <div class="imgbox">
-              <img
-                class="Device"
-                id="Ultra"
-                src="img/watchUltra.jpeg"
-                alt="Ultra"
-              />
-              <div class="overlay">
-                <div class="text">Watch<br />Ultra</div>
-              </div>
-            </div>
-            <div class="imgbox">
-              <img
-                class="Device"
-                id="eight"
-                src="img/watch8.jpeg"
-                alt="eight"
-              />
-              <div class="overlay">
-                <div class="text">Watch8</div>
-              </div>
-            </div>
-          </div>
+          </div> -->
         </div>
       </div>
-      <footer>
-        <h2>About Apple</h2>
-        <article class="Description">
-          <p>
-            Apple hardware, software, and services work together to give your
-            employees the power and flexibility to do whatever needs doing —
-            whether you’re running a startup, scale-up, or global enterprise.
-          </p>
-          <p>
-            You can start a project on Mac and finish it on iPad, use your
-            screens side by side to extend your workspace, and even draw with
-            Apple Pencil on your iPad or use your iPhone to make live updates on
-            your Mac. And it’s all compatible with apps from Microsoft and
-            Google, so your team has everything it needs to get any job done.
-          </p>
-          <p>
-            Apple devices come with powerful apps built in. The App Store offers
-            even more tools for almost any job — from sales and engineering to
-            fixing jets and building skyscrapers. And the Apple developer
-            platform gives businesses the power to create custom solutions that
-            the world has yet to see.
-          </p>
-        </article>
-      </footer>
     </main>
+    <footer>
+      <h2>About Apple</h2>
+      <article class="Description">
+        <p>
+          Apple hardware, software, and services work together to give your
+          employees the power and flexibility to do whatever needs doing —
+          whether you’re running a startup, scale-up, or global enterprise.
+        </p>
+        <p>
+          You can start a project on Mac and finish it on iPad, use your screens
+          side by side to extend your workspace, and even draw with Apple Pencil
+          on your iPad or use your iPhone to make live updates on your Mac. And
+          it’s all compatible with apps from Microsoft and Google, so your team
+          has everything it needs to get any job done.
+        </p>
+        <p>
+          Apple devices come with powerful apps built in. The App Store offers
+          even more tools for almost any job — from sales and engineering to
+          fixing jets and building skyscrapers. And the Apple developer platform
+          gives businesses the power to create custom solutions that the world
+          has yet to see.
+        </p>
+      </article>
+    </footer>
+    <script src="script.js"></script>
   </body>
 </html>
