@@ -229,7 +229,13 @@ div > strong {
 
 .imgbox .overlay img {
   position: relative;
-  transition: all 0.2s linear;
+}
+
+.show {
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 4px;
+  opacity: 1;
+  color: #ffc300;
 }
 
 /* Media Query */
@@ -411,13 +417,6 @@ div > strong {
   .Description p {
     color: black;
     margin: 0.5em;
-  }
-
-  .imgbox:hover .overlay {
-    background-color: rgba(0, 0, 0, 0.6);
-    font-size: 14px;
-    opacity: 1;
-    color: #ffc300;
   }
 
   footer {

@@ -3,7 +3,6 @@ let sort = "none";
 let searchText = "none";
 let product;
 const SUBMIT_BUTTON = document.querySelector("#find");
-
 fetch("product.json")
   .then((response) => response.json())
   .then((data) => {
@@ -82,12 +81,14 @@ SUBMIT_BUTTON.addEventListener("click", () => {
     // first loading the image and display it
     // we should display items at first without scroll event
     load();
+    overlayStyleChange();
     window.addEventListener("scroll", function scroll() {
       if (
         window.scrollY + window.innerHeight >=
         document.documentElement.scrollHeight
       ) {
         load();
+        overlayStyleChange();
       }
     });
   }
@@ -105,6 +106,17 @@ function createImgBox(title, imgsrc, price, alternative) {
                           <div class="price">${price}&#36;</div>
                         </div>
                       </div>`;
-
   document.querySelector(".group").innerHTML += imgElement;
+}
+
+function overlayStyleChange() {
+  const OVERLAYS = document.querySelectorAll(".overlay");
+  OVERLAYS.forEach((overlay) => {
+    overlay.addEventListener("click", function click() {
+      overlay.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+      overlay.style.fontSize = "14px";
+      overlay.style.opacity = "1";
+      overlay.style.color = "#ffc300";
+    });
+  });
 }
