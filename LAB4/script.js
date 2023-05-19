@@ -50,6 +50,7 @@ SUBMIT_BUTTON.addEventListener("click", () => {
       }
     }
   });
+  console.log(filter);
   if (filter.length === 0) {
     alert("NO SUCH ELEMENTS! PLEASE SEARCH AGAIN");
   } else {
@@ -66,7 +67,7 @@ SUBMIT_BUTTON.addEventListener("click", () => {
     // onscroll function
     // display 4 each element when user scroll and its height + window.inner height is bigger then document's height
     let totalNum = 0;
-    function load(loadNum = 6) {
+    function load(loadNum = 4) {
       for (let i = 0; i < loadNum; i++) {
         if (totalNum < filter.length) {
           createImgBox(
@@ -76,6 +77,9 @@ SUBMIT_BUTTON.addEventListener("click", () => {
             filter[totalNum].category
           );
           totalNum++;
+        }
+        else {
+          window.removeEventListener("scroll", scroll);
         }
       }
     }
@@ -99,7 +103,6 @@ function createImgBox(title, imgsrc, price, alternative) {
   const imgElement = `<div class="imgbox">
                         <img
                           class="Device"
-                          loading="lazy"
                           src=${imgsrc}
                           alt=${alternative}
                         />
