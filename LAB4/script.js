@@ -1,7 +1,8 @@
-let device = "all";
+let device = "macbook";
 let sort = "none";
 let searchText = "none";
 let product;
+
 fetch("product.json")
   .then((response) => response.json())
   .then((data) => {
@@ -10,21 +11,18 @@ fetch("product.json")
 
 const CATEGORY = document.querySelector("#category");
 CATEGORY.addEventListener("change", () => {
-  window.removeEventListener("scroll", scroll);
   device = CATEGORY.options[CATEGORY.selectedIndex].value;
   console.log(device);
 });
 
 const SORTING = document.querySelector("#sort");
 SORTING.addEventListener("change", () => {
-  window.removeEventListener("scroll", scroll);
   sort = SORTING.options[SORTING.selectedIndex].value;
   console.log(sort);
 });
 
 const SEARCH = document.querySelector("#search");
 SEARCH.addEventListener("change", () => {
-  window.removeEventListener("scroll", scroll);
   searchText = SEARCH.value;
   console.log(searchText);
 });
@@ -50,7 +48,6 @@ SUBMIT_BUTTON.addEventListener("click", () => {
       }
     }
   });
-  console.log(filter);
   if (filter.length === 0) {
     alert("NO SUCH ELEMENTS! PLEASE SEARCH AGAIN");
   } else {
@@ -63,26 +60,9 @@ SUBMIT_BUTTON.addEventListener("click", () => {
         return b.price - a.price;
       });
     }
-    console.log(filter);
     // onscroll function
     // display 4 each element when user scroll and its height + window.inner height is bigger then document's height
     let totalNum = 0;
-    function load(loadNum = 4) {
-      for (let i = 0; i < loadNum; i++) {
-        if (totalNum < filter.length) {
-          createImgBox(
-            filter[totalNum].name,
-            filter[totalNum].imgsrc,
-            filter[totalNum].price,
-            filter[totalNum].category
-          );
-          totalNum++;
-        }
-        else {
-          window.removeEventListener("scroll", scroll);
-        }
-      }
-    }
     // first loading the image and display it
     // we should display items at first without scroll event
     load();
@@ -96,8 +76,27 @@ SUBMIT_BUTTON.addEventListener("click", () => {
         overlayStyleChange();
       }
     });
+
+    function load(loadNum = 4) {
+      for (let i = 0; i < loadNum; i++) {
+        if (totalNum < filter.length && filter[totalNum].category === device) {
+          console.log((totalNum + 1) + " load function invoked")
+          console.log(filter)
+          createImgBox(
+            filter[totalNum].name,
+            filter[totalNum].imgsrc,
+            filter[totalNum].price,
+            filter[totalNum].category
+          );
+          totalNum++;
+        }
+      }
+    }
+    
   }
 });
+
+
 
 function createImgBox(title, imgsrc, price, alternative) {
   const imgElement = `<div class="imgbox">
