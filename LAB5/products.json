@@ -1,0 +1,122 @@
+[
+  {
+    "name": "MacBookPro 13-inch",
+    "price": 1499,
+    "image": "img/MacPro.jpeg",
+    "type": "macbook"
+  },
+  {
+    "name": "MacBookPro 14-inch",
+    "price": 1999,
+    "image": "img/MacPro14.jpg",
+    "type": "macbook"
+  },
+  {
+    "name": "MacBookPro 16-inch",
+    "price": 2499,
+    "image": "img/MacPro16.jpeg",
+    "type": "macbook"
+  },
+  {
+    "name": "MacBookAir M1 13-inch",
+    "price": 899,
+    "image": "img/MacAir13.jpeg",
+    "type": "macbook"
+  },
+  {
+    "name": "MacBookAir M2 13.6-inch",
+    "price": 1199,
+    "image": "img/MacAir136.jpeg",
+    "type": "macbook"
+  },
+  {
+    "name": "iPad Pro 11-inch",
+    "price": 799,
+    "image": "img/iPadPro.jpg",
+    "type": "ipad"
+  },
+  {
+    "name": "iPad Pro 12.9-inch",
+    "price": 1099,
+    "image": "img/iPadPro.jpg",
+    "type": "ipad"
+  },
+  {
+    "name": "iPad Air",
+    "price": 599,
+    "image": "img/ipadAir.png",
+    "type": "ipad"
+  },
+  {
+    "name": "iPad 10th-Gen",
+    "price": 449,
+    "image": "img/iPad10th.png",
+    "type": "ipad"
+  },
+  {
+    "name": "iPad 9th-Gen",
+    "price": 329,
+    "image": "img/iPad9th.png",
+    "type": "ipad"
+  },
+  {
+    "name": "iPhone 14 Pro",
+    "price": 999,
+    "image": "img/iPhone14Pro.jpg",
+    "type": "iphone"
+  },
+  {
+    "name": "iPhone 14",
+    "price": 799,
+    "image": "img/iPhone14.jpg",
+    "type": "iphone"
+  },
+  {
+    "name": "iPhone 14 Plus",
+    "price": 899,
+    "image": "img/iPhone14plus.png",
+    "type": "iphone"
+  },
+  {
+    "name": "iPhone 13",
+    "price": 599,
+    "image": "img/iPhone13.jpg",
+    "type": "iphone"
+  },
+  {
+    "name": "iPhone 12",
+    "price": 599,
+    "image": "img/iPhone12.png",
+    "type": "iphone"
+  },
+  {
+    "name": "iPhone SE",
+    "price": 429,
+    "image": "img/iPhoneSE.jpg",
+    "type": "iphone"
+  },
+  {
+    "name": "Apple Watch Hermes",
+    "price": 1509,
+    "image": "img/watchHer.jpeg",
+    "type": "watch"
+  },
+  {
+    "name": "Apple Watch Ultra",
+    "price": 799,
+    "image": "img/watchUltra.jpeg",
+    "type": "watch"
+  },
+  {
+    "name": "Apple Watch 8",
+    "price": 399,
+    "image": "img/watch8.jpeg",
+    "type": "watch"
+  },
+  {
+    "name": "Apple Watch SE",
+    "price": 249,
+    "image": "img/watchSE.jpg",
+    "type": "watch"
+  }
+]

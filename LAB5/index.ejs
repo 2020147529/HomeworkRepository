@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Pacifico&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <title>Document</title>
+  </head>
+  <body class="index">
+    <header>
+      <h1>Welcome to my Shop!</h1>
+      <nav class="page">
+        <a id="index" onclick="location.href='/'">Main Page</a>
+        <a id="login" onclick="location.href='login'">Log In Page</a>
+        <a id="signup" onclick="location.href='signup'">Sign Up Page</a>
+      </nav>
+    </header>
+    <main class="Main">
+      <div class="classify" id="classify">
+        <div class="category">
+          <p>Choose a category</p>
+          <select name="category" id="category">
+            <option value="All" selected>All</option>
+            <option value="macbook">MacBook</option>
+            <option value="iphone">iPhone</option>
+            <option value="ipad">iPad</option>
+            <option value="watch">Watch</option>
+          </select>
+        </div>
+        <div class="search">
+          <p>Enter what you want</p>
+          <input type="text" placeholder="e.g. iPhone" id="searchTerm" />
+        </div>
+        <div class="sort">
+          <p>Choose a sort</p>
+          <select name="sorting" id="sort">
+            <option value="" selected>--SELECT ORDER--</option>
+            <option value="ascending">ascending</option>
+            <option value="descending">descending</option>
+          </select>
+        </div>
+        <button id="find">Search</button>
+      </div>
+      <div class="Stuff">
+        <div class="group">
+          <!-- <div class="imgbox">
+            <img class="Device" src="img/MacPro.jpeg" alt="MacBookPro" />
+            <div class="overlay">
+              <div class="text">MacBook<br />Pro</div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </main>
+    <footer>
+      <h2>About Apple</h2>
+      <article class="Description">
+        <p>
+          Apple hardware, software, and services work together to give your
+          employees the power and flexibility to do whatever needs doing —
+          whether you’re running a startup, scale-up, or global enterprise.
+        </p>
+        <p>
+          You can start a project on Mac and finish it on iPad, use your screens
+          side by side to extend your workspace, and even draw with Apple Pencil
+          on your iPad or use your iPhone to make live updates on your Mac. And
+          it’s all compatible with apps from Microsoft and Google, so your team
+          has everything it needs to get any job done.
+        </p>
+        <p>
+          Apple devices come with powerful apps built in. The App Store offers
+          even more tools for almost any job — from sales and engineering to
+          fixing jets and building skyscrapers. And the Apple developer platform
+          gives businesses the power to create custom solutions that the world
+          has yet to see.
+        </p>
+      </article>
+    </footer>
+    <input type="hidden" id="dbdata" value="<%= JSON.stringify(renderdata) %>" />
+    <script src="script.js"></script>
+  </body>
+</html>
