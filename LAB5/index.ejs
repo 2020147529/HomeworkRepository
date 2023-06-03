@@ -16,12 +16,12 @@
   <body class="index">
     <header>
       <h1>Welcome to my Shop!</h1>
-      <nav class="page">
-        <a id="index" onclick="location.href='/'">Main Page</a>
-        <a id="login" onclick="location.href='login'">Log In Page</a>
-        <a id="signup" onclick="location.href='signup'">Sign Up Page</a>
-      </nav>
     </header>
+    <nav class="page">
+      <button id="index" onclick="location.href='/'">Main Page</button>
+      <button id="login" onclick="location.href='login'">Log In Page</button>
+      <button id="signup" onclick="location.href='signup'">Sign Up Page</button>
+    </nav>
     <main class="Main">
       <div class="classify" id="classify">
         <div class="category">
@@ -83,7 +83,11 @@
         </p>
       </article>
     </footer>
-    <input type="hidden" id="dbdata" value="<%= JSON.stringify(renderdata) %>" />
+    <input
+      type="hidden"
+      id="dbdata"
+      value="<%= JSON.stringify(renderdata) %>"
+    />
     <script src="script.js"></script>
   </body>
 </html>

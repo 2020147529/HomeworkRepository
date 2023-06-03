@@ -24,12 +24,7 @@ app.use("/", express.static(__dirname + "/"));
 
 app.get("/", (req, res) => {
   db.all("select * from product", (err, rows) => {
-    console.log(rows);
     res.render("index", { renderdata: rows });
-    module.exports = {
-        renderdata: rows,
-      };
-      
   });
 });
 
@@ -46,6 +41,7 @@ app.get("/product/:product_id", (req, res) => {
     "select * from product where product_id=" +
       String(req.params.product_id).slice(1),
     (err, row) => {
+      console.log(req.params.product_id.slice(1));
       res.render("detail", { data: row });
     }
   );

@@ -50,12 +50,20 @@ nav {
 
 .index #index {
   padding: 0.5em;
+  margin: 3px;
   border: 1px solid #001524;
-  transition: all 0.5s;
 }
 
-.index #index:hover {
-  font-size: 1.2rem;
+.page button {
+  width: 200px;
+  height: 40px;
+  border: 3px #f7ede2 solid;
+  margin: 15px auto;
+  background-color: #e0e1dd;
+  text-align: center;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.5s;
 }
 
 h2 {
@@ -68,36 +76,6 @@ h2 {
 a {
   text-decoration: none;
   color: #0d1b2a;
-}
-
-.page a {
-  margin: 3px;
-  padding: 10px;
-  color: #343a40;
-  transition: all 0.3s;
-}
-.page a:hover {
-  color: #4cc9f0;
-}
-
-.signup .page #signup {
-  padding: 0.5em;
-  border: 1px solid #001524;
-  transition: all 0.5s;
-}
-
-.signup .page #signup:hover {
-  font-size: 1.2rem;
-}
-
-.login .page #login {
-  padding: 0.5em;
-  border: 1px solid #001524;
-  transition: all 0.5s;
-}
-
-.login .page #login:hover {
-  font-size: 1.2rem;
 }
 
 .info {
@@ -202,24 +180,6 @@ div > strong {
   margin: 5%;
 }
 
-.overlay {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: #001524;
-  opacity: 0;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .text {
   font-size: 30px;
   font-weight: bold;
@@ -240,6 +200,32 @@ div > strong {
   font-size: 4px;
   opacity: 1;
   color: #ffc300;
+}
+
+#itemdetail-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.itemimg {
+  width: 40%;
+  margin: 25px;
+}
+
+#itemdetail-main p {
+  color: black;
+}
+
+#itemdetail-main div {
+  margin: 25px;
+}
+
+#comment-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
 }
 
 /* Media Query */
