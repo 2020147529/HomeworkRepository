@@ -11,6 +11,7 @@ document.addEventListener(
 );
 
 function start(data) {
+  console.log(data);
   var product = data;
   init(data);
   function init(product) {
@@ -82,6 +83,7 @@ function start(data) {
         }
       }
 
+      console.log(finalGroup);
       // remove all elements searched before
       while (group.firstChild) {
         group.removeChild(group.firstChild);
@@ -94,94 +96,64 @@ function start(data) {
         para.textContent = "No results to display!";
         group.appendChild(para);
         // for each product we want to display, pass its product object to fetchBlob()
-      } else {
-        load();
-        overlayStyleChange();
-        // infinite scroll
-        window.addEventListener("scroll", function scroll() {
-          if (
-            window.scrollY + window.innerHeight >=
-            document.documentElement.scrollHeight
-          ) {
-            load();
-            overlayStyleChange();
-          }
-        });
+      }
 
-        function load(loadNum = 4) {
-          for (let i = 0; i < loadNum; i++) {
-            if (totalNum < finalGroup.length) {
-              createImgBox(
-                finalGroup[totalNum].product_title,
-                finalGroup[totalNum].product_image,
-                finalGroup[totalNum].product_price,
-                finalGroup[totalNum].product_category
-              );
-              totalNum++;
-            }
+      showInit(finalGroup);
+    }
+
+    showInit(data);
+    document.querySelector("#find").onclick = selectCategory;
+
+    function showInit(product) {
+      for (let i = 0; i < 4; i++) {
+        if (i < product.length) {
+          const IMGBOX = document.createElement("div");
+          const IMG = document.createElement("img");
+
+          IMGBOX.setAttribute("class", "imgbox");
+          IMG.setAttribute("class", "Device");
+          IMG.src = product[i].product_image;
+          IMG.alt = product[i].product_title;
+
+          IMGBOX.addEventListener("click", newpage);
+
+          group.appendChild(IMGBOX);
+          IMGBOX.appendChild(IMG);
+        }
+        function newpage() {
+          window.location.href = "./product/:" + product[i].product_id;
+        }
+      }
+    }
+    window.onscroll = function scroll() {
+      if (
+        window.scrollY + window.innerHeight >=
+        document.body.offsetHeight
+        // document.documentElement.scrollHeight
+      ) {
+        let showedItemNum = document.querySelector(".group").childElementCount;
+        let newProduct = finalGroup.slice(showedItemNum);
+        for (let i = 0; i < 4; i++) {
+          if (i < newProduct.length) {
+            const IMGBOX = document.createElement("div");
+            const IMG = document.createElement("img");
+
+            IMGBOX.setAttribute("class", "imgbox");
+            IMG.setAttribute("class", "Device");
+            IMG.src = newProduct[i].product_image;
+            IMG.alt = newProduct[i].product_title;
+
+            IMGBOX.addEventListener("click", newpage);
+
+            document.querySelector(".group").appendChild(IMGBOX);
+            IMGBOX.appendChild(IMG);
+          }
+          // When click the product, then it will linking to page which introduce detail baout the product.
+          function newpage() {
+            window.location.href = "./product/:" + newProduct[i].product_id;
           }
         }
       }
-      // first loading the image and display it
-      // we should display items at first without scroll event
-    }
-
-    function fetchBlob(product) {
-      // construct the URL path to the image file from the product.image property
-      const url = `${product.product_image}`;
-      // Use fetch to fetch the image, and convert the resulting response to a blob
-      // Again, if any errors occur we report them in the console.
-      fetch(url)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
-          }
-          return response.blob();
-        })
-        .then((blob) => showProduct(blob, product))
-        .then(() => overlayStyleChange())
-        .catch((err) => console.error(`Fetch problem: ${err.message}`));
-    }
-
-    function showProduct(blob, product) {
-      // Convert the blob to an object URL — this is basically an temporary internal URL
-      // that points to an object stored inside the browser
-      const objectURL = URL.createObjectURL(blob);
-      // create <section>, <h2>, <p>, and <img> elements
-      createImgBox(
-        product.product_title,
-        objectURL,
-        product.product_price,
-        product.product_category
-      );
-    }
-
-    // Creating image element zone
-    function createImgBox(title, imgsrc, price, alternative) {
-      const imgElement = `<div class="imgbox">
-                            <img
-                              class="Device"
-                              src=${imgsrc}
-                              alt=${alternative}
-                            />
-                            <div class="overlay">
-                              <div class="text">${title}</div>
-                              <div class="price">${price}&#36;</div>
-                            </div>
-                          </div>`;
-      group.innerHTML += imgElement;
-    }
-
-    function overlayStyleChange() {
-      const OVERLAYS = document.querySelectorAll(".overlay");
-      OVERLAYS.forEach((overlay) => {
-        overlay.addEventListener("click", function click() {
-          overlay.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
-          overlay.style.fontSize = "14px";
-          overlay.style.opacity = "1";
-          overlay.style.color = "#ffc300";
-        });
-      });
-    }
+    };
   }
 }

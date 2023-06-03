@@ -10,18 +10,27 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Pacifico&family=Roboto+Mono&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="main.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
     <title>Document</title>
   </head>
   <body class="index">
     <header>
       <h1>Welcome to my Shop!</h1>
       <nav class="page">
-        <a href="index.html" id="index">Main Page</a>
-        <a href="login.html" id="login">Log In Page</a>
-        <a href="signup.html" id="signup">Sign Up Page</a>
+        <button id="index" onclick="location.href='/'" style="font-size: 20px">
+          &#x2190;
+        </button>
       </nav>
     </header>
-    <script src="script.js"></script>
+    <section class="detail">
+      <div id="product-body"></div>
+    </section>
+    <input type="hidden" id="productdata" value="<%= JSON.stringify(data) %>" />
+    <script src="/detail.js"></script>
   </body>
 </html>
