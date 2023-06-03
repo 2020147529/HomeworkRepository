@@ -1,19 +1,19 @@
 // get data from product.db in json file format.
 let db = JSON.parse(document.getElementById("dbdata").value);
 
+// After loading page initializing function started
 document.addEventListener(
   "DOMContentLoaded",
   () => {
-    base(db);
+    start(db);
   },
   false
 );
 
-function base(data) {
+function start(data) {
   var product = data;
   init(data);
   function init(product) {
-    console.log(product);
     const category = document.querySelector("#category");
     const searchTerm = document.querySelector("#searchTerm");
     const searchBtn = document.querySelector("#find");
@@ -34,31 +34,21 @@ function base(data) {
 
     searchBtn.addEventListener("click", selectCategory);
 
+    // Select cateogry of the option selected by <select> element
     function selectCategory() {
-      categoryGroup = [];
-      finalGroup = [];
-      if (
-        category.value === lastCategory &&
-        searchTerm.value === lastSearch &&
-        sorting.value === lastSorting
-      ) {
-        return;
+      lastCategory = category.value;
+      lastSearch = searchTerm.value.trim();
+      lastSorting = sorting.value;
+      if (category.value === "All") {
+        categoryGroup = product;
+        selectproduct();
       } else {
-        lastCategory = category.value;
-        lastSearch = searchTerm.value.trim();
-        lastSorting = sorting.value;
-        if (category.value === "All") {
-          categoryGroup = product;
-          console.log(product);
-          selectproduct();
-        } else {
-          const lowerCaseType = category.value.toLowerCase();
+        const lowerCaseType = category.value.toLowerCase();
 
-          categoryGroup = product.filter(
-            (product) => product.category === lowerCaseType
-          );
-          selectproduct();
-        }
+        categoryGroup = product.filter(
+          (product) => product.product_category === lowerCaseType
+        );
+        selectproduct();
       }
     }
 
@@ -66,19 +56,21 @@ function base(data) {
       if (searchTerm.value.trim() === "") {
         finalGroup = categoryGroup;
       } else {
-        const lowerCaseSearchTerm = searchTerm.value.trim().toLowerCase();
+        // filtered products by using user input from text field
         finalGroup = categoryGroup.filter((product) => {
-          product.title.toLowerCase().includes(lowerCaseSearchTerm);
+          return product.product_title
+            .toLowerCase()
+            .includes(lowerCaseSearchTerm);
         });
       }
+
       sortingproduct();
     }
 
+    // Sorting product
     function sortingproduct() {
       let totalNum = 0;
-      if (sorting.value === "") {
-        finalGroup = categoryGroup;
-      } else {
+      if (sorting.value !== "") {
         if (lastSorting === "ascending") {
           finalGroup = finalGroup.sort((a, b) => {
             return a.product_price - b.product_price;
@@ -90,10 +82,12 @@ function base(data) {
         }
       }
 
+      // remove all elements searched before
       while (group.firstChild) {
         group.removeChild(group.firstChild);
       }
 
+      // There is no element of final filtered array.
       if (finalGroup.length === 0) {
         const para = document.createElement("p");
         para.setAttribute("class", "noresult");
@@ -103,6 +97,7 @@ function base(data) {
       } else {
         load();
         overlayStyleChange();
+        // infinite scroll
         window.addEventListener("scroll", function scroll() {
           if (
             window.scrollY + window.innerHeight >=
@@ -147,6 +142,7 @@ function base(data) {
         .then(() => overlayStyleChange())
         .catch((err) => console.error(`Fetch problem: ${err.message}`));
     }
+
     function showProduct(blob, product) {
       // Convert the blob to an object URL — this is basically an temporary internal URL
       // that points to an object stored inside the browser
@@ -160,8 +156,8 @@ function base(data) {
       );
     }
 
+    // Creating image element zone
     function createImgBox(title, imgsrc, price, alternative) {
-      console.log(imgsrc);
       const imgElement = `<div class="imgbox">
                             <img
                               class="Device"
