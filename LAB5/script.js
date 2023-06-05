@@ -11,7 +11,6 @@ document.addEventListener(
 );
 
 function start(data) {
-  console.log(data);
   var product = data;
   init(data);
   function init(product) {
@@ -83,7 +82,6 @@ function start(data) {
         }
       }
 
-      console.log(finalGroup);
       // remove all elements searched before
       while (group.firstChild) {
         group.removeChild(group.firstChild);
@@ -105,6 +103,7 @@ function start(data) {
     document.querySelector("#find").onclick = selectCategory;
 
     function showInit(product) {
+      finalGroup = product;
       for (let i = 0; i < 4; i++) {
         if (i < product.length) {
           const IMGBOX = document.createElement("div");

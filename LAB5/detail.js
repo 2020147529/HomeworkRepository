@@ -20,19 +20,18 @@ document.addEventListener(
     const price = document.createElement("p");
     const type = document.createElement("p");
     const id = document.createElement("p");
-    const ect = document.createElement("p");
+    const description = document.createElement("p");
 
+    id.innerHTML = "<strong>ID</strong> &nbsp;&nbsp; " + data.product_id;
     name.innerHTML = "<strong>NAME</strong>  &nbsp;&nbsp;" + data.product_title;
-    content.innerHTML =
-      "<strong>CONTENTs</strong> &nbsp;&nbsp; " + data.product_contents;
+    content.innerHTML = "<strong>ABOUT</strong> &nbsp;&nbsp; ";
     price.innerHTML =
       "<strong>PRICE</strong> &nbsp;&nbsp; " + data.product_price + "$";
     type.innerHTML =
       "<strong>Category</strong> &nbsp;&nbsp; " + data.product_category;
-    id.innerHTML = "<strong>ID</strong> &nbsp;&nbsp; " + data.product_id;
-    ect.innerHTML =
-      "Aumenta su valor con las joyas bellas que el artesano ha trabajado duro. ¿Qué más debería decir aquí? Si lo escribo así, parece que hay algo, así que ¿es suficiente el español?";
-    ect.id = "ect";
+    description.innerHTML =
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, harum dolores! Placeat excepturi deleniti quod sequi aspernatur, at doloribus! Voluptates maxime id repellat similique inventore quaerat reprehenderit eligendi est aut.";
+    description.id = "description";
 
     divmain.appendChild(img);
     divmain.appendChild(divdata);
@@ -41,7 +40,7 @@ document.addEventListener(
     divdata.appendChild(price);
     divdata.appendChild(type);
     divdata.appendChild(content);
-    divdata.appendChild(ect);
+    divdata.appendChild(description);
     main.appendChild(divmain);
   },
   false
@@ -80,7 +79,7 @@ function display(json) {
   const btn = document.createElement("button");
   input.type = "text";
   input.id = "new_comment";
-  input.placeholder = "Enter your review.";
+  input.placeholder = "Enter comment";
   newComment.id = "newComment";
   btn.innerHTML = "Submit";
   btn.onclick = newCommentConstructor;
